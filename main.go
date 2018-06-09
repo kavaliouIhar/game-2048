@@ -5,7 +5,6 @@ import (
 )
 
 func main() {
-
 	board.StartMessage()
 	a := board.CreateBoard(4)
 	for {
