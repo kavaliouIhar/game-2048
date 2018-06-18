@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func (b *Board) Loss() {
+func (b *Board) End() {
 	b.Show()
 	fmt.Println("u lost")
 	fmt.Println("ur final score is: ", b.score)
@@ -25,7 +25,7 @@ func (b *Board) Loss() {
 
 }
 
-func (b *Board) Play() {
+func (b *Board) Continue() {
 	fmt.Print("Enter command: ")
 	var input string
 	fmt.Scanln(&input)
@@ -44,5 +44,15 @@ func (b *Board) Play() {
 		os.Exit(2)
 	default:
 		fmt.Println("wrong command")
+	}
+}
+
+func (b *Board) Play() {
+	for {
+		if b.GameOver() {
+			b.End()
+		} else {
+			b.Continue()
+		}
 	}
 }

@@ -7,11 +7,5 @@ import (
 func main() {
 	board.StartMessage()
 	a := board.CreateBoard(4)
-	for {
-		if a.GameOver() {
-			a.Loss()
-		} else {
-			a.Play()
-		}
-	}
+	a.Play()
 }
