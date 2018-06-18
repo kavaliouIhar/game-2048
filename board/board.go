@@ -99,7 +99,7 @@ func (b *Board) Show() {
 		}
 		fmt.Println()
 		for j := 0; j < q; j++ {
-			fmt.Print(showGrid(b.data[i*q+j]))
+			fmt.Print(printGrid(b.data[i*q+j]))
 		}
 		fmt.Println()
 		for j := 0; j < q; j++ {
@@ -148,42 +148,9 @@ func (b *Board) GameOver() bool {
 	return true
 }
 
-func showGrid(n int) string {
+func printGrid(n int) string {
 	if n == 0 {
 		return "|      |"
 	}
-	if n == 2 {
-		return "|    2 |"
-	}
-	if n == 4 {
-		return "|    4 |"
-	}
-	if n == 8 {
-		return "|    8 |"
-	}
-	if n == 16 {
-		return "|   16 |"
-	}
-	if n == 32 {
-		return "|   32 |"
-	}
-	if n == 64 {
-		return "|   64 |"
-	}
-	if n == 128 {
-		return "|  128 |"
-	}
-	if n == 256 {
-		return "|  256 |"
-	}
-	if n == 512 {
-		return "|  512 |"
-	}
-	if n == 1024 {
-		return "| 1024 |"
-	}
-	if n == 2048 {
-		return "| 2048 |"
-	}
-	return ""
+	return fmt.Sprintf("|%5d |", n)
 }
