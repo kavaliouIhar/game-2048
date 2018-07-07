@@ -31,7 +31,6 @@ func (b *Board) RestartBoard() {
 
 func CreateBoard(a int) *Board {
 	rand.Seed(time.Now().UTC().UnixNano())
-
 	if a < 2 || a > 10 {
 		a = 4
 	}
